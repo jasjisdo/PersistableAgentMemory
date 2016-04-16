@@ -21,7 +21,7 @@
 
     <modules>
         <module>examples</module>
-        <module>persistanceservice</module>
+        <module>persistence-service</module>
     </modules>
 
     <dependencyManagement>
