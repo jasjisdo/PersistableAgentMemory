@@ -4,14 +4,10 @@ import de.dailab.jiactng.agentcore.knowledge.IFact;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
-/**
- * Created by domann on 01.07.2016.
- */
 @MappedSuperclass
 @Access(AccessType.PROPERTY)
-public class PersistableFact implements Serializable, IFact, Persistable<Long> {
+public class PersistableFact implements IFact, Persistable<Long> {
 
     private final Long id;
 
@@ -22,12 +18,10 @@ public class PersistableFact implements Serializable, IFact, Persistable<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true, nullable = false)
-    @Override
     public Long getId() {
         return this.id;
     }
 
-    @Override
     public boolean isNew() {
         return id == 0L;
     }
