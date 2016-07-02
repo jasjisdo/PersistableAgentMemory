@@ -99,7 +99,7 @@
             </dependency>
 
             <!--********************************************************************************************************
-            * Database Cache Related Dependencies -                                                                     *
+            * Database Cache Related Dependencies -                                                                    *
             *********************************************************************************************************-->
             <dependency>
                 <groupId>net.sf.ehcache</groupId>
