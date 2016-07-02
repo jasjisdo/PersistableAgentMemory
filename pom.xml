@@ -43,7 +43,7 @@
             </dependency>
 
             <!--********************************************************************************************************
-            * Java Persistence Api Related Dependencies -                                                                  *
+            * Java Persistence Api Related Dependencies -                                                              *
             *********************************************************************************************************-->
             <dependency>
                 <groupId>org.hibernate.javax.persistence</groupId>
