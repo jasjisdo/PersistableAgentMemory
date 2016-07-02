@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.apache</groupId>
         <artifactId>apache</artifactId>
-        <version>17</version>
+        <version>18</version>
     </parent>
 
     <properties>
@@ -27,53 +27,61 @@
     <dependencyManagement>
         <dependencies>
 
+            <!--
+            //////////////////////////////////
+            //  Compile Scope Dependencies  //
+            //////////////////////////////////
+            -->
+
+            <!--********************************************************************************************************
+            * JIACv Dependencies provided by DAI-Laboratory - agentCore                                                *
+            *********************************************************************************************************-->
             <dependency>
                 <groupId>de.dailab.jiactng</groupId>
                 <artifactId>agentCore</artifactId>
                 <version>5.2.1</version>
             </dependency>
 
-            <!--
-            ///////////////////////////////////
-            //  BEGIN of java persistence  //
-            //////////////////////////////////
-
-            dependencies for (jpa, hibernate-orm, jdbc-driver etc.)
-            -->
-
-            <!-- SPRING -->
-
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-commons-core</artifactId>
-                <version>1.4.1.RELEASE</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>3.2.16.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>3.2.16.RELEASE</version>
-            </dependency>
-
-            <!-- SPRING -->
-
-            <!-- JPA -->
-
+            <!--********************************************************************************************************
+            * Java Persistence Api Related Dependencies -                                                                  *
+            *********************************************************************************************************-->
             <dependency>
                 <groupId>org.hibernate.javax.persistence</groupId>
                 <artifactId>hibernate-jpa-2.1-api</artifactId>
                 <version>1.0.0.Final</version>
             </dependency>
 
-            <!-- JPA -->
+            <!--********************************************************************************************************
+            * Spring Data Related Dependencies - spring-data-commons-core, spring-data-jpa                             *
+            *********************************************************************************************************-->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-commons-core</artifactId>
+                <version>1.4.1.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>1.6.6.RELEASE</version>
+            </dependency>
 
-            <!-- HIBERNATE -->
+            <!--********************************************************************************************************
+            * Spring Data Related Dependencies -                                                                       *
+            *********************************************************************************************************-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>3.2.17.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>3.2.17.RELEASE</version>
+            </dependency>
 
+            <!--********************************************************************************************************
+            * Hibernate ORM Related Dependencies -                                                                     *
+            *********************************************************************************************************-->
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
@@ -90,48 +98,55 @@
                 <version>4.3.11.Final</version>
             </dependency>
 
-            <!-- HIBERNATE -->
-
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-jpa</artifactId>
-                <version>${spring-data-jpa.version}</version>
-            </dependency>
-
-            <dependency>
-                <!-- Provides EHCacheManagement  -->
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <!-- Same versions as pulled by spring-data -->
-                <version>${spring-framework.version}</version>
-            </dependency>
-
+            <!--********************************************************************************************************
+            * Database Cache Related Dependencies -                                                                     *
+            *********************************************************************************************************-->
             <dependency>
                 <groupId>net.sf.ehcache</groupId>
                 <artifactId>ehcache-core</artifactId>
                 <version>2.6.11</version>
             </dependency>
+            <dependency>
+                <!-- Provides EHCacheManagement  -->
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>3.2.17.RELEASE</version>
+            </dependency>
 
+
+            <!--********************************************************************************************************
+            * Java Database Related Dependencies - h2                                                                  *
+            *********************************************************************************************************-->
             <!-- H2 database -->
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
                 <version>1.4.192</version>
             </dependency>
-            <!--
-            ////////////////////////////////
-            //  END of java persistence  //
-            ///////////////////////////////
-            -->
 
+            <!--********************************************************************************************************
+            * Apache Commons Dependencies - commons-net, commons-io                                                    *
+            *********************************************************************************************************-->
             <dependency>
                 <groupId>commons-net</groupId>
                 <artifactId>commons-net</artifactId>
-                <version>3.4</version>
+                <version>3.5</version>
             </dependency>
 
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.5</version>
+            </dependency>
+
+            <!--
+            ///////////////////////////////
+            //  Test Scope Dependencies  //
+            ///////////////////////////////
+            -->
+
             <!--********************************************************************************************************
-            * Test Scope Dependencies - junit, hmacrest, mockito, agent-unit etc.                                      *
+            * Java Unit Test Dependencies - junit, hamcrest etc.                                                       *
             *********************************************************************************************************-->
             <dependency>
                 <groupId>junit</groupId>
@@ -156,6 +171,10 @@
     </dependencyManagement>
 
     <repositories>
+        <!--************************************************************************************************************
+        * Official Maven Repository provided by the Distributed Artificial Intelligence Laboratory                     *
+        * http://www.dai-labor.de/en/                                                                                  *
+        *************************************************************************************************************-->
         <repository>
             <id>dai-open</id>
             <name>DAI Open</name>
