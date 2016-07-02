@@ -11,7 +11,7 @@
     </parent>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>1.7</java.version>
     </properties>
 
     <groupId>com.github.jajisdo</groupId>
@@ -33,6 +33,22 @@
                 <version>5.2.1</version>
             </dependency>
 
+            <!--
+            ///////////////////////////////////
+            //  BEGIN of java persistence  //
+            //////////////////////////////////
+
+            dependencies for (jpa, hibernate-orm, jdbc-driver etc.)
+            -->
+
+            <!-- SPRING -->
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-commons-core</artifactId>
+                <version>1.4.1.RELEASE</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
@@ -43,6 +59,70 @@
                 <artifactId>spring-context</artifactId>
                 <version>3.2.16.RELEASE</version>
             </dependency>
+
+            <!-- SPRING -->
+
+            <!-- JPA -->
+
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.1-api</artifactId>
+                <version>1.0.0.Final</version>
+            </dependency>
+
+            <!-- JPA -->
+
+            <!-- HIBERNATE -->
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>4.3.11.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-c3p0</artifactId>
+                <version>4.3.11.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-ehcache</artifactId>
+                <version>4.3.11.Final</version>
+            </dependency>
+
+            <!-- HIBERNATE -->
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring-data-jpa.version}</version>
+            </dependency>
+
+            <dependency>
+                <!-- Provides EHCacheManagement  -->
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <!-- Same versions as pulled by spring-data -->
+                <version>${spring-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sf.ehcache</groupId>
+                <artifactId>ehcache-core</artifactId>
+                <version>2.6.11</version>
+            </dependency>
+
+            <!-- H2 database -->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>1.4.192</version>
+            </dependency>
+            <!--
+            ////////////////////////////////
+            //  END of java persistence  //
+            ///////////////////////////////
+            -->
 
             <dependency>
                 <groupId>commons-net</groupId>
