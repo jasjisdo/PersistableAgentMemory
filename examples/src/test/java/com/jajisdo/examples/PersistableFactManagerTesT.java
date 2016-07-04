@@ -33,35 +33,35 @@ public class PersistableFactManagerTest {
     }
 
     @Test
-    public void name0() throws Exception {
+    public void whenPersistenceManagerIsInitialized_thenPersistenceUnitNameIsCorrect() throws Exception {
         assertEquals("test-inmem-unit", manager.getPersistenceUnitName());
     }
 
     @Test
-    public void name1() throws Exception {
+    public void whenPersistenceManagerIsInitialized_thenJdbcInfoIsNotEmpty() throws Exception {
         String jdbcInfo = manager.getJdbcInfo();
-        assertNotNull(jdbcInfo);
+        assertFalse(jdbcInfo.isEmpty());
     }
 
     @Test
-    public void name2() throws Exception {
+    public void whenBasicStringFactIsInitialized_thenBasicStringFactIsNew() throws Exception {
         assertTrue(basicStringFact1.isNew());
     }
 
     @Test
-    public void name3() throws Exception {
+    public void whenBasicStringFactIsAddedToPersistenceUnit_thenBasicStringFactIsNotNew() throws Exception {
         manager.add(basicStringFact1);
         assertFalse(basicStringFact1.isNew());
     }
 
     @Test
-    public void name4() throws Exception {
+    public void whenBasicStringFactIsAddedToPersistenceUnit_thenCountOfBasicStringFactIsOne() throws Exception {
         manager.add(basicStringFact1);
         assertEquals(1, manager.count(BasicStringFact.class));
     }
 
     @Test
-    public void name5() throws Exception {
+    public void whenFourBasicStringFactAreAddedToPersistenceUnit_thenCountOfBasicStringFactIsFour() throws Exception {
         manager.add(basicStringFact1);
         manager.add(basicStringFact2);
         manager.add(basicStringFact3);
@@ -70,7 +70,8 @@ public class PersistableFactManagerTest {
     }
 
     @Test
-    public void name6() throws Exception {
+    public void whenFourBasicStringFactAndOneBasicIntegerFactAreAddedToPersistenceUnit_thenCountOfBasicStringFactIsFour()
+            throws Exception {
         manager.add(basicStringFact1);
         manager.add(basicStringFact2);
         manager.add(basicStringFact3);
@@ -80,7 +81,8 @@ public class PersistableFactManagerTest {
     }
 
     @Test
-    public void name7() throws Exception {
+    public void whenFourBasicStringFactAndOneBasicIntegerFactAreAddedToPersistenceUnit_thenCountOfBasicIntegerFactIsOne()
+            throws Exception {
         manager.add(basicStringFact1);
         manager.add(basicStringFact2);
         manager.add(basicStringFact3);
@@ -90,13 +92,13 @@ public class PersistableFactManagerTest {
     }
 
     @Test
-    public void name8() throws Exception {
+    public void whenBasicIntegerFactIsAddedToPersistenceUnit_thenResultOfGetFactByIsEqualsToFirstPersistedFact() throws Exception {
         manager.add(basicIntegerFact1);
         assertEquals(basicIntegerFact1, manager.getFactById(BasicIntegerFact.class, 1));
     }
 
     @Test
-    public void name9() throws Exception {
+    public void whenFourBasicStringFactAreAddedToPersistenceUnit_thenResultOfGetFactByIsEqualsToFourthPersistedFact() throws Exception {
         manager.add(basicStringFact1);
         manager.add(basicStringFact2);
         manager.add(basicStringFact3);
