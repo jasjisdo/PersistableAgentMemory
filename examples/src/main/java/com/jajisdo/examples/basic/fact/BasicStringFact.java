@@ -11,6 +11,9 @@ public class BasicStringFact extends PersistableFact {
 
     private String content;
 
+    protected BasicStringFact() {
+    }
+
     public BasicStringFact(String content) {
         this.content = content;
     }

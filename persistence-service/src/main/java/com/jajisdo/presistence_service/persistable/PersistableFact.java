@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Access(AccessType.PROPERTY)
 public class PersistableFact implements IFact, Persistable<Long> {
 
-    private final Long id;
+    private Long id;
 
     public PersistableFact() {
         this.id = 0L;
@@ -22,8 +22,13 @@ public class PersistableFact implements IFact, Persistable<Long> {
         return this.id;
     }
 
+    protected void setId(Long id) {
+        this.id = id;
+    }
+
+    @Transient
     public boolean isNew() {
-        return id == 0L;
+        return this.id == 0L;
     }
 
 }

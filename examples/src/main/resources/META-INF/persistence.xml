@@ -11,8 +11,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Put Declarations of annotated entity classes here -->
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Book</class>
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Platform</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
@@ -43,8 +41,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Put Declarations of annotated entity classes here -->
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Book</class>
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Platform</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
@@ -75,8 +71,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Put Declarations of annotated entity classes here -->
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Book</class>
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Platform</class>
+        <class>com.jajisdo.examples.basic.fact.BasicStringFact</class>
+        <class>com.jajisdo.examples.basic.fact.BasicIntegerFact</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
@@ -85,7 +81,7 @@
             <property name="javax.persistence.jdbc.user" value="sa"/>
             <property name="javax.persistence.jdbc.password" value="sa"/>
             <property name="javax.persistence.jdbc.url" value=
-                    "jdbc:h2:mem:BOOKDB;INIT=CREATE SCHEMA IF NOT EXISTS DBO"/>
+                    "jdbc:h2:mem:FACTDB;INIT=CREATE SCHEMA IF NOT EXISTS DBO"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="create"/>
@@ -108,8 +104,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Put Declarations of annotated entity classes here -->
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Book</class>
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Platform</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
@@ -144,8 +138,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Put Declarations of annotated entity classes here -->
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Book</class>
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Platform</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
@@ -180,8 +172,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Put Declarations of annotated entity classes here -->
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Book</class>
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Platform</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
@@ -213,8 +203,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Put Declarations of annotated entity classes here -->
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Book</class>
-        <class>de.tubit.tuberlin.gitlab.common.domain.entities.Platform</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
