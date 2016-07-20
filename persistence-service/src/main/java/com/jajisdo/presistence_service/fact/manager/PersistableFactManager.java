@@ -58,7 +58,7 @@ public class PersistableFactManager {
     /**
      * Persist a given persistableFact.
      *
-     * @return the assign database id of battery.
+     * @return the assigned database id of fact.
      */
     public long add(PersistableFact persistableFact) {
         EntityManager em = createEmAndBeginTransaction();
@@ -73,7 +73,7 @@ public class PersistableFactManager {
     /**
      * Update a given persistableFact.
      *
-     * @return the assign database id of charging point.
+     * @return the assigned database id of fact.
      */
     public long update(PersistableFact persistableFact) {
         EntityManager em = createEmAndBeginTransaction();
