@@ -178,7 +178,7 @@
 
     <repositories>
         <!--************************************************************************************************************
-        * Public Maven Repository provided by the Distributed Artificial Intelligence Laboratory                     *
+        * Public Maven Repository provided by the Distributed Artificial Intelligence Laboratory                       *
         * http://www.dai-labor.de/en/                                                                                  *
         *************************************************************************************************************-->
         <repository>
