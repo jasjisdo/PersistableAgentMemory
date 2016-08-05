@@ -34,7 +34,7 @@ public class PersistableFactManager {
     /*
      * commit the transaction and close the entity manager.
      */
-    private void comitTransactionAndCloseEm(EntityManager em) {
+    private void commitTransactionAndCloseEm(EntityManager em) {
         em.getTransaction().commit();
         em.close();
     }
@@ -65,7 +65,7 @@ public class PersistableFactManager {
 
         em.persist(persistableFact);
 
-        comitTransactionAndCloseEm(em);
+        commitTransactionAndCloseEm(em);
 
         return persistableFact.getId();
     }
@@ -80,7 +80,7 @@ public class PersistableFactManager {
 
         em.merge(persistableFact);
 
-        comitTransactionAndCloseEm(em);
+        commitTransactionAndCloseEm(em);
 
         return persistableFact.getId();
     }
@@ -95,7 +95,7 @@ public class PersistableFactManager {
 
         T t = em.find(clazz, factId);
 
-        comitTransactionAndCloseEm(em);
+        commitTransactionAndCloseEm(em);
 
         return t;
     }
@@ -114,7 +114,7 @@ public class PersistableFactManager {
 //            book = resultList.get(0);
 //        }
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return book;
 //    }
@@ -133,7 +133,7 @@ public class PersistableFactManager {
 //            book = resultList.get(0);
 //        }
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return book;
 //    }
@@ -145,7 +145,7 @@ public class PersistableFactManager {
 //
 //        platform = em.find(Platform.class, platformId);
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return platform;
 //    }
@@ -164,7 +164,7 @@ public class PersistableFactManager {
 //            platform = resultList.get(0);
 //        }
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return platform;
 //    }
@@ -176,7 +176,7 @@ public class PersistableFactManager {
         long count = em.createQuery(String.format("SELECT COUNT(c) FROM %s c", clazz.getSimpleName()), Long.class)
                 .getSingleResult();
 
-        comitTransactionAndCloseEm(em);
+        commitTransactionAndCloseEm(em);
 
         return count;
     }
@@ -206,7 +206,7 @@ public class PersistableFactManager {
 //
 //        em.persist(battery);
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return battery.getId();
 //    }
@@ -221,7 +221,7 @@ public class PersistableFactManager {
 //
 //        em.persist(chargingPoint);
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return chargingPoint.getId();
 //    }
@@ -236,7 +236,7 @@ public class PersistableFactManager {
 //
 //        em.merge(chargingPoint);
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return chargingPoint.getId();
 //    }
@@ -251,7 +251,7 @@ public class PersistableFactManager {
 //
 //        em.merge(battery);
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return battery.getId();
 //    }
@@ -266,7 +266,7 @@ public class PersistableFactManager {
 //
 //        em.persist(batteryMeasurement);
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return batteryMeasurement.getId();
 //    }
@@ -282,7 +282,7 @@ public class PersistableFactManager {
 //
 //        chargingPoint = em.find(ChargingPointEntity.class, chargingPointId);
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return chargingPoint;
 //    }
@@ -294,7 +294,7 @@ public class PersistableFactManager {
 //
 //        batteryEntity = em.find(BatteryEntity.class, batteryId);
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return batteryEntity;
 //    }
@@ -306,7 +306,7 @@ public class PersistableFactManager {
 //
 //        batteryMeasurementEntity = em.find(BatteryMeasurementEntity.class, batteryMeasurementId);
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return batteryMeasurementEntity;
 //    }
@@ -325,7 +325,7 @@ public class PersistableFactManager {
 //                BatteryEntity.class);
 //        batteries = query.getResultList();
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return batteries;
 //    }
@@ -356,7 +356,7 @@ public class PersistableFactManager {
 //            battery = query.getSingleResult();
 //        } catch (NoResultException nre) {}
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return battery;
 //    }
@@ -375,7 +375,7 @@ public class PersistableFactManager {
 //                ChargingPointEntity.class);
 //        chargingPoints = query.getResultList();
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return chargingPoints;
 //    }
@@ -405,7 +405,7 @@ public class PersistableFactManager {
 //        query.setParameter("column", column);
 //        chargingPoint = query.getSingleResult();
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return chargingPoint;
 //    }
@@ -428,7 +428,7 @@ public class PersistableFactManager {
 //        query.setMaxResults(numberOfResults);
 //        batteryMeasurements = query.getResultList();
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return batteryMeasurements;
 //    }
@@ -455,7 +455,7 @@ public class PersistableFactManager {
 //        query.setMaxResults(numberOfResults);
 //        batteryMeasurements = query.getResultList();
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return batteryMeasurements;
 //    }
@@ -477,7 +477,7 @@ public class PersistableFactManager {
 //        query.setParameter("endtime",new Date(timeRange.getTo()));
 //        batteryMeasurements = query.getResultList();
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return batteryMeasurements;
 //    }
@@ -507,7 +507,7 @@ public class PersistableFactManager {
 //        query.setMaxResults(numberOfResults);
 //        batteryMeasurements = query.getResultList();
 //
-//        comitTransactionAndCloseEm(em);
+//        commitTransactionAndCloseEm(em);
 //
 //        return batteryMeasurements;
 //    }
